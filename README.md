@@ -4,6 +4,8 @@ CSE 298 - Foundations of Robotics
 
 Due: Monday 7/13 at 5:00pm EST
 
+You may use any resources you see fit (notes, lecture, book, internet), but you may not ask questions of one another.
+
 ## Description
 
 Answer the following questions. Make at least one commit for each question.
