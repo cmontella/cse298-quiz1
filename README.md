@@ -12,7 +12,11 @@ Answer the following questions. Make at least one commit for each question.
 
 1. Describe the method by which LIDAR measures the distance to objects.
 
+*Most LIDAR work on a principle called "time-of-flight" to measure the distance to objects. The LIDAR emits a pulse of light toward the object, which reflects it back to the LIDAR. The time between when the pulse is emitted and recieved is measured as `t`. The distance is calculated using the equation distance = speed * time / 2 (it's divided by two because the distance traveled by the light is twice the distance to the object). We know the speed of light is ~3x10^8 m/s, so the equation can be solved to yield the distance to the object.*
+
 2. What do accelerometers and gyroscopes measure?
+
+*Accelerometers measure acceleration of the sensor, in m/s^2. Gyroscopes measure the angular velocity of the sensor, in units of rad/s*
 
 3. Given the following data, find the least squares best fit for a line that passes through it. Provide values for Beta1 and Beta2.
 
@@ -37,5 +41,12 @@ data = [
    16.9914    7.8736
    18.1118    6.0755
    20.1223    4.8266
-   20.7962    1.2416]
+   20.7962    1.2416];
+X = [ones(20,1), data(:,1)];   
+Y = [data(:,2)];
+B = X\Y; %%% Answer: B = [41.7573; -1.9308]
+hold on;
+plot(data(:,1),data(:,2),'r.');
+y = B(2)*data(:,1) + B(1);
+plot(x(:,1),y),'b-');
 ```   
